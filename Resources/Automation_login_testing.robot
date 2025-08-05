@@ -27,7 +27,7 @@ Verify That Error is Displayed
     [Arguments]    ${locator}    ${value}
     Scroll Element Into View    ${locator}
     Wait Until Element Is Visible    ${locator}
-    ${msg}=    Get Text    ${locator}
+    ${msg}    Get Text    ${locator}
     Element Should Contain    ${locator}    ${value}
     Log    Actual:${msg}    console=true
 
@@ -41,9 +41,7 @@ Clicking on SignOut Button and GoBack
     ${last}    Get Text    ${LOGIN_TEXT_LOCATOR}
     Log    Firsst:${first}    console=true
     Log    Second:${last}    console=true
-    
+
 Verify that we are on page
     [Arguments]    ${locator}    ${msg}
     Get Title
-    
-    

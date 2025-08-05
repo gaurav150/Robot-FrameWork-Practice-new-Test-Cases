@@ -4,13 +4,15 @@ Resource    ../Resources/Automation_login_testing.robot
 Resource    ../Resources/automation_testing.robot
 Resource    ../Resources/Login_page_locators.robot
 
+
 *** Variables ***
-${Email}    fs@fmail.com
-${pass}     ~!ZAQWERTY)(*&^%)
-${WrongEmail}    f1@gmail.com
+${Email}            fs@fmail.com
+${pass}             ~!ZAQWERTY)(*&^%)
+${WrongEmail}       f1@gmail.com
 @{WrongPassword}    123
 ${EmptyPassword}    ${EMPTY}
 ${EmptyUsername}    ${EMPTY}
+
 
 *** Test Cases ***
 Login with Correct User Name and Password
@@ -27,13 +29,13 @@ Login with Incorrect User Name and Incorrect Password
     Clicking to LogIn Button
     Verify That Error is Displayed    ${Error_tag_locator}    Error:
     Sleep    3s
-    
+
 Login with Correct User Name but Empty Password
     Open Browser To AutomationTesting Page
     Navigate to MY Account
     Entering Email and password    ${Email}    ${pass}
     Clicking to LogIn Button
-    Verify That Error is Displayed    ${Empty_pass_locator}     Username is required.
+    Verify That Error is Displayed    ${Empty_pass_locator}    Username is required.
     Sleep    3s
 
 Login with Empty User Name and valid Password
@@ -41,7 +43,7 @@ Login with Empty User Name and valid Password
     Navigate to MY Account
     Entering Email and password    ${EmptyUsername}    ${EmptyPassword}
     Clicking to LogIn Button
-    Verify That Error is Displayed    ${Empty_pass_locator}     Username is required.
+    Verify That Error is Displayed    ${Empty_pass_locator}    Username is required.
     Sleep    3s
 
 Login with Empty User Name but Empty Password
@@ -49,7 +51,7 @@ Login with Empty User Name but Empty Password
     Navigate to MY Account
     Entering Email and password    ${EmptyUsername}    ${EmptyPassword}
     Clicking to LogIn Button
-    Verify That Error is Displayed    ${Empty_pass_locator}     Username is required.
+    Verify That Error is Displayed    ${Empty_pass_locator}    Username is required.
     Sleep    3s
 
 Login with Random User Name and Random Password
@@ -57,7 +59,7 @@ Login with Random User Name and Random Password
     Navigate to MY Account
     Entering Email and password    ${WrongEmail}    ${WrongPassword}
     Clicking to LogIn Button
-    Verify That Error is Displayed    ${Empty_pass_locator}     A user could not be found with this email address.
+    Verify That Error is Displayed    ${Empty_pass_locator}    A user could not be found with this email address.
     Sleep    3s
 
 Login Authentication With Correct Username and Password
@@ -73,4 +75,4 @@ Login Authentication
     Entering Email and password    ${Email}    ${pass}
     Clicking to LogIn Button
     Clicking on SignOut Button and GoBack
-    Sleep     20s
+    Sleep    20s
