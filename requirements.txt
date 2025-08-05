@@ -1,0 +1,8 @@
+selenium~=4.34.2
+chromedriver-autoinstaller~=0.6.4
+robotframework~=7.3.2
+python-dotenv~=1.1.1
+robotframework-seleniumlibrary~=6.7.1
+webdriver-manager~=4.0.2
+robotframework-robocop~=6.5.2
+robotframework-pythonlibcore~=4.4.1
