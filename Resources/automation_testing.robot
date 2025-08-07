@@ -22,7 +22,7 @@ ${URL}          https://practice.automationtesting.in/
 Open Browser To AutomationTesting Page
     Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
-#    Log    ${COUPON_CODE_TEXT_AREA}    console=true
+
 
 Click On Shop Menu
     Wait Until Element Is Visible    ${SHOP_MENU}    5

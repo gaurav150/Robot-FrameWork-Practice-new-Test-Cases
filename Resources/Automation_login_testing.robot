@@ -39,8 +39,9 @@ Clicking on SignOut Button and GoBack
     Sleep    1s
     Go Back
     ${last}    Get Text    ${LOGIN_TEXT_LOCATOR}
-    Log    Firsst:${first}    console=true
-    Log    Second:${last}    console=true
+    Log    First: ${first}    console=true
+    Log    Second: ${last}    console=true
+    Should Not Be Equal As Strings    ${first}    ${last}
 
 Verify that we are on page
     [Arguments]    ${locator}    ${msg}

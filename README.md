@@ -57,7 +57,15 @@ robot --outputdir results tests/
 ```bash
 robot -i smoke tests/
 ```
+### Run Particular Test Case Of file
+```bash
+robot --loglevel DEBUG --test "Login Authentication" Tests/Login_Page.robot
+```
 
+### Run Our Test Case in Debug level 
+```bash
+robot --loglevel DEBUG --test "Login Authentication" Tests/Login_Page.robot
+```
 ---
 
 ## 📊 Test Results
