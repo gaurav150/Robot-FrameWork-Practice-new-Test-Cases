@@ -4,8 +4,6 @@ Library     Process
 Library     OperatingSystem
 # Library    ../Resources/SetupDriver.py    WITH NAME    SetupDriver
 Resource    ../Resources/billing_details_locators.robot
-Resource    ../Resources/helper_functions.robot
-Resource    ../Resources/order_page.robot
 
 
 *** Keywords ***

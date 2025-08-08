@@ -1,15 +1,18 @@
 *** Settings ***
-Library    SeleniumLibrary
-#Resource    ../Resources/home_locators.robot
+Library     SeleniumLibrary
+# Resource    ../Resources/home_locators.robot
 Resource    ../Resources/shop_page_locators.robot
+
+
 *** Variables ***
-${width_a}        100
+${width_a}      100
+
+
 *** Keywords ***
-    
-#Set Slider To
+# Set Slider To
 #    [Arguments]    ${SliderPointValue}
 #    ${slider}=    Get WebElement    ${RIGHT_Slider_loc}
-#    ${max_value}=  Get Element Attribute    ${MAX_VALUE_SLIDER_LOCATOR}    value
+#    ${max_value}=    Get Element Attribute    ${MAX_VALUE_SLIDER_LOCATOR}    value
 #    ${min_value}=    Get Element Attribute    ${MIN_VALUE_SLIDER_LOCATOR}    value
 #    ${range}=    Evaluate    int(${max_value}) - int(${min_value})
 #    Log    value of range:${range}    console=true
@@ -26,7 +29,7 @@ ${width_a}        100
 Set Slider To
     [Arguments]    ${SliderPointValue}
     ${slider}=    Get WebElement    ${RIGHT_Slider_loc}
-    ${max_value}=  Get Element Attribute    ${MAX_VALUE_SLIDER_LOCATOR}    value
+    ${max_value}=    Get Element Attribute    ${MAX_VALUE_SLIDER_LOCATOR}    value
     ${min_value}=    Get Element Attribute    ${MIN_VALUE_SLIDER_LOCATOR}    value
     ${range}=    Evaluate    int(${max_value}) - int(${min_value})
     Log    value of range:${range}    console=true
@@ -37,16 +40,13 @@ Set Slider To
     ${offset}=    Evaluate    float((((${SliderPointValue} - int(${min_value})) / ${range}))*100)
     ${x}=    Convert To Number    ${offset}    2
     Log    Value of Offset:${x}    console=true
-    Return From Keyword    ${x}
-
+    RETURN    ${x}
 
 Click On Filter Button
     Scroll Element Into View    ${FILTER_BUTTON}
     Wait Until Element Is Visible    ${FILTER_BUTTON}    30s
     Click Element    ${FILTER_BUTTON}
     Capture Page Screenshot    filter{index}.png
-
-
 
 Set Slider Handle Right To Percentage
     [Arguments]    ${percentage}
@@ -58,9 +58,3 @@ Set Slider Handle Right To Percentage
     ...    sliderHandle.dispatchEvent(new Event('input', { bubbles: true }));
     ...    sliderHandle.dispatchEvent(new Event('change', { bubbles: true }));
     Execute JavaScript    ${js}
-
-
-
-
-
-
