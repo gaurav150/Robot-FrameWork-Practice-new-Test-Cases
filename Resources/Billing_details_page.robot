@@ -10,28 +10,23 @@ Resource    ../Resources/billing_details_locators.robot
 Entering UserFirstName and LastName
     [Arguments]    ${userName}    ${Name}
     Wait Until Element Is Visible    ${FIRST_NAME}    30
-#    Scroll Element Into View    ${FIRST_NAME}
     Input Text    ${FIRST_NAME}    ${userName}
     Sleep    3
-#    Set Focus To Element    ${LAST_NAME}
     Wait Until Element Is Visible    ${LAST_NAME}
     Input Text    ${LAST_NAME}    ${Name}
 
 Entering Company Name
     [Arguments]    ${cName}
     Scroll Element Into View    ${COMPANY_NAME}
-    Wait Until Element Is Visible    ${COMPANY_NAME}    30
     Input Text    ${COMPANY_NAME}    ${cName}
 
 Entering Email Address
     [Arguments]    ${email}
     Scroll Element Into View    ${EMAIL_ADDRESS}
-    Wait Until Element Is Visible    ${EMAIL_ADDRESS}    30
     Input Text    ${EMAIL_ADDRESS}    ${email}
 
 Entering Contact Number
     [Arguments]    ${phoneNumber}
-    Wait Until Element Is Visible    ${PHONE}    30
     Scroll Element Into View    ${PHONE}
     Input Text    ${PHONE}    ${phoneNumber}
 

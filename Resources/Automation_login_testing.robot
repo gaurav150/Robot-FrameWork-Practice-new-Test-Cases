@@ -20,7 +20,6 @@ Entering Email and password
 
 Clicking to LogIn Button
     Scroll Element Into View    ${Login_Btn}
-    Wait Until Element Is Visible    ${Login_Btn}    30
     Click Element    ${Login_Btn}
 
 Verify That Error is Displayed

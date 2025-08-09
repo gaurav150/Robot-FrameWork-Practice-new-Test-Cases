@@ -6,6 +6,7 @@ Resource            ../Resources/My_Account_page_locator.robot
 Resource            ../Resources/Automation_my_account_page.robot
 Resource            ../Resources/shipping_locators.robot
 Resource            ../Resources/automation_shipping_testing.robot
+Resource            ../Resources/Custom_steps.robot
 
 Suite Teardown      Close Browser
 
@@ -20,7 +21,7 @@ Opening My Account Dashboard
     Open Browser To AutomationTesting Page
     Navigate to MY Account
     Entering Email and password    ${email}    ${pass}
-    Clicking to LogIn Button
+    I Clicking to Locator Button    ${Login_Btn}
     Sleep    5s
     Verify that locator is present on page    ${SIGN_OUT_BTN}
     Clicking on Locator    ${ORDERS_BTN}
@@ -35,7 +36,7 @@ Address Functionality
     Open Browser To AutomationTesting Page
     Navigate to MY Account
     Entering Email and password    ${email}    ${pass}
-    Clicking to LogIn Button
+    I Clicking to Locator Button    ${Login_Btn}
     Sleep    5s
     Verify that locator is present on page    ${SIGN_OUT_BTN}
     Clicking on Locator    ${ADDRESS_STATUS}
@@ -63,7 +64,7 @@ Account Details
     Open Browser To AutomationTesting Page
     Navigate to MY Account
     Entering Email and password    ${email}    ${pass}
-    Clicking to LogIn Button
+    I Clicking to Locator Button    ${Login_Btn}
     Sleep    5s
     Verify that locator is present on page    ${EDIT_PASSWORDS_LOCATOR}
 
@@ -71,7 +72,7 @@ Account Log Out
     Open Browser To AutomationTesting Page
     Navigate to MY Account
     Entering Email and password    ${email}    ${pass}
-    Clicking to LogIn Button
+    I Clicking to Locator Button    ${Login_Btn}
     Sleep    5s
     Verify that locator is present on page    ${EDIT_PASSWORDS_LOCATOR}
     Clicking On Locator    ${SIGN_OUT}
